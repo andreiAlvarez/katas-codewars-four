@@ -24,3 +24,16 @@ const encrypt = (text, rule) => text
     .split("")
     .map(v => String.fromCharCode((v.charCodeAt() + rule) % 256))
     .join(``);
+
+// kata 4
+
+Array.prototype.reduce = function(process, initial) {
+  for (let i = 0; i < this.length; i++) {
+    if (!initial) {
+      i++;
+      initial = this[0];
+    }
+    initial = process(initial, this[i]);
+  }
+  return initial;
+};
