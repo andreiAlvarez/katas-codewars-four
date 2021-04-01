@@ -17,3 +17,10 @@ const dismember = func => {
 // solution 2
 
 const dismember = func => (''+func).match(/(?<=\().*(?=\))/)[0].match(/\w+/g)||[];
+
+// kata 3 
+
+const encrypt = (text, rule) => text
+    .split("")
+    .map(v => String.fromCharCode((v.charCodeAt() + rule) % 256))
+    .join(``);
